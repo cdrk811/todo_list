@@ -10,5 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 0) do
+ActiveRecord::Schema[7.1].define(version: 2025_04_10_093758) do
+  create_table "tasks", charset: "utf8mb4", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "sequence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
