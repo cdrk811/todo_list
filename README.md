@@ -197,3 +197,4 @@ http://localhost:3000
 ## Why I use bulk update for reorder?
 - When you need to update the order of a bunch of tasks — especially if you’re dealing with hundreds or even millions — doing it one-by-one is like telling the database, “Hey, update this one. Now this one. And now this one…” over and over. That takes time.
 - Instead, I use bulk update to say, “Here’s the full list of updates — do them all at once.” It’s way faster, easier on the system, and helps us meet performance goals like updating up to 1 million tasks in under 5 seconds.
+- I updated the code and used a `CASE` statement because it lets us update multiple tasks in one query. This avoids the `N+1` query problem and makes the update process much faster and more efficient, especially when dealing with many tasks.
