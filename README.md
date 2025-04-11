@@ -88,6 +88,17 @@ http://localhost:3000
 }
 ```
 
+### Error Example
+```json
+{
+    "status": 422,
+    "success": false,
+    "errors": [
+        "Title can't be blank"
+    ]
+}
+```
+
 ### 3. Update a Task
 
 **PUT/PATCH** `/api/v1/tasks/:id`
@@ -119,6 +130,17 @@ http://localhost:3000
 }
 ```
 
+#### Error Example
+```json
+{
+    "status": 422,
+    "success": false,
+    "errors": [
+        "Title can't be blank"
+    ]
+}
+```
+
 ### 4. Delete a Task
 
 **DELETE** `/api/v1/tasks/:id`
@@ -140,7 +162,7 @@ http://localhost:3000
 }
 ```
 
-### 4. Reorder Tasks (Drag and Drop)
+### 5. Reorder Tasks (Drag and Drop)
 
 **PATCH** `/api/v1/tasks/reorder`
 
@@ -174,4 +196,4 @@ http://localhost:3000
 
 ## Why I use bulk update for reorder?
 - When you need to update the order of a bunch of tasks — especially if you’re dealing with hundreds or even millions — doing it one-by-one is like telling the database, “Hey, update this one. Now this one. And now this one…” over and over. That takes time.
-- Instead, we use bulk update to say, “Here’s the full list of updates — do them all at once.” It’s way faster, easier on the system, and helps us meet performance goals like updating up to 1 million tasks in under 5 seconds.
+- Instead, I use bulk update to say, “Here’s the full list of updates — do them all at once.” It’s way faster, easier on the system, and helps us meet performance goals like updating up to 1 million tasks in under 5 seconds.
